@@ -62,12 +62,12 @@ Response:
     {
         "id": "2",
         "name": "Ubuntu",
-        "state": "shut off"
+        "state": "stopped"
     },   
     {
         "id": "3",
         "name": "Windows 11 Work",
-        "state": "shut off"
+        "state": "stopped"
     } 
 ]
 
