@@ -15,7 +15,7 @@ https://github.com/CentauriDK/Unraid_VM_Docker_API</Overview>
   <Category>Network:Management Network:Other</Category>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/CentauriDK/Unraid_VM_Docker_API/refs/heads/main/unraid_vm_docker_api_ico.png</Icon>
+  <Icon>https://raw.githubusercontent.com/CentauriDK/Unraid_VM_Docker_API/refs/heads/main/Unraid-Template/unraid_vm_docker_api_ico.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
