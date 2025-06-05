@@ -51,7 +51,7 @@ docker run -d \
 
 Example Usage
 
-
+Compleate list of created VM's
 GET /vm/list
 Response:
 [   
@@ -72,6 +72,7 @@ Response:
     } 
 ]
 
+Status of specific VM
 GET /vm/status/Home Assistant
 Response:
 {
@@ -79,6 +80,7 @@ Response:
   "status": "running"
 }
 
+Start of specific VM
 POST /vm/control
 Body:
 {
@@ -86,6 +88,7 @@ Body:
   "action": "start"
 }
 
+Stop of specific VM
 POST /vm/control
 Body:
 {
@@ -93,6 +96,7 @@ Body:
   "action": "stop"
 }
 
+Restart of specific VM
 POST /vm/control
 Body:
 {
@@ -100,6 +104,7 @@ Body:
   "action": "restart"
 }
 
+Forced Stop of specific VM
 POST /vm/control
 Body:
 {
@@ -108,6 +113,7 @@ Body:
 }
 
 
+Compleate list of installed Docker Images
 GET /docker/list
 Response:
 [     
@@ -133,7 +139,7 @@ Response:
     }  
 ]
 
-
+Status of specific Docker
 GET /docker/status/nextcloud
 Response:
 {
@@ -142,6 +148,7 @@ Response:
   "uptime": "Up 3 days"
 }
 
+Start of specific Docker
 POST /docker/control
 Body:
 {
@@ -149,6 +156,7 @@ Body:
   "action": "start"
 }
 
+Stop of specific Docker
 POST /docker/control
 Body:
 {
