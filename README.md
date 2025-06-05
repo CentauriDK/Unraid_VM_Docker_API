@@ -29,3 +29,39 @@ docker run -d \
   -v /var/run/libvirt:/var/run/libvirt \
   -v /var/run/docker.sock:/var/run/docker.sock \
   centauridk/unraid_vm_docker_api
+
+
+| Method | Endpoint                   | Description               |
+| ------ | -------------------------- | ------------------------- |
+| GET    | `/vm/list`                 | List all virtual machines |
+| GET    | `/vm/status/<vm_name>`     | Get VM status             |
+| POST   | `/vm/start/<vm_name>`      | Start VM                  |
+| POST   | `/vm/stop/<vm_name>`       | Graceful stop VM          |
+| POST   | `/vm/force-stop/<vm_name>` | Force stop VM             |
+| POST   | `/vm/restart/<vm_name>`    | Restart VM                |
+
+
+| Method | Endpoint                          | Description          |
+| ------ | --------------------------------- | -------------------- |
+| GET    | `/docker/list`                    | List all containers  |
+| GET    | `/docker/status/<container_name>` | Get container status |
+| POST   | `/docker/start/<container_name>`  | Start container      |
+| POST   | `/docker/stop/<container_name>`   | Stop container       |
+
+Example Usage
+
+GET /vm/status/Home Assistant
+Response:
+{
+  "vm": "Home Assistant",
+  "status": "running"
+}
+
+GET /docker/status/mailpit
+Response:
+{
+  "container": "mailpit",
+  "status": "running",
+  "uptime": "Up 3 days"
+}
+
