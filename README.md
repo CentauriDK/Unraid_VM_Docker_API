@@ -24,6 +24,7 @@ Run this container on your Unraid server:
 ```bash
 docker run -d \
   --name unraid_vm_docker_api \
+  -p 5888:5888 \
   --net=host \
   --privileged \
   -v /var/run/libvirt:/var/run/libvirt \
