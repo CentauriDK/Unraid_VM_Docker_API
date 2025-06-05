@@ -50,6 +50,27 @@ docker run -d \
 
 Example Usage
 
+
+GET /vm/list
+Response:
+[   
+    {
+        "id": "1",
+        "name": "Home Assistant",
+        "state": "running"
+    },    
+    {
+        "id": "2",
+        "name": "Ubuntu",
+        "state": "shut off"
+    },   
+    {
+        "id": "3",
+        "name": "Windows 11 Work",
+        "state": "shut off"
+    } 
+]
+
 GET /vm/status/Home Assistant
 Response:
 {
@@ -57,11 +78,79 @@ Response:
   "status": "running"
 }
 
-GET /docker/status/mailpit
+POST /vm/control
+Body:
+{
+  "vm_name": "Home Assistant",
+  "action": "start"
+}
+
+POST /vm/control
+Body:
+{
+  "vm_name": "Home Assistant",
+  "action": "stop"
+}
+
+POST /vm/control
+Body:
+{
+  "vm_name": "Home Assistant",
+  "action": "restart"
+}
+
+POST /vm/control
+Body:
+{
+  "vm_name": "Home Assistant",
+  "action": "force-stop"
+}
+
+
+GET /docker/list
+Response:
+[     
+    {
+        "name": "zigbee2mqtt",
+        "status": "running",
+        "uptime": "3 days"
+    },
+    {
+        "name": "nextcloud",
+        "status": "running",
+        "uptime": "3 days"
+    },    
+    {
+        "name": "MQTT",
+        "status": "running",
+        "uptime": "3 days"
+    },
+	{
+        "name": "phpmyadmin",
+        "status": "stopped",
+        "uptime": ""
+    }  
+]
+
+
+GET /docker/status/nextcloud
 Response:
 {
-  "container": "mailpit",
+  "container": "nextcloud",
   "status": "running",
   "uptime": "Up 3 days"
 }
 
+POST /docker/control
+Body:
+{
+  "container_name": "nextcloud",
+  "action": "start"
+}
+
+POST /docker/control
+Body:
+{
+  "container_name": "nextcloud",
+  "action": "stop"
+}
